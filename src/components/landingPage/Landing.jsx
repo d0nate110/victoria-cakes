@@ -2,27 +2,37 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./Landing.css";
 import slides from "../../constants/landingImages";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const Landing = () => {
     const delay = 2000; // Slide delay (2 seconds)
     const navigate = useNavigate();
+
     const [idx, setIdx] = useState(0);
-    const timeoutRef = useRef(null);
+    const sliderRef = useRef(null); // Reference to the slider container
 
-    // const resetTimeout = () => {
-    //     if (timeoutRef.current) {
-    //         clearTimeout(timeoutRef.current);
-    //     }
-    // };
+    const handleNext = () => {
+        if (idx < slides.length - 1) {
+            setIdx(idx + 1);
+            scrollToSlide(idx + 1);
+        }
+    };
 
-    // useEffect(() => {
-    //     resetTimeout();
-    //     timeoutRef.current = setTimeout(
-    //         () => setIdx((prevIdx) => (prevIdx === slides.length - 1 ? 0 : prevIdx + 1)),
-    //         delay
-    //     );
-    //     return () => resetTimeout();
-    // }, [idx]);
+    const handlePrev = () => {
+        if (idx > 0) {
+            setIdx(idx - 1);
+            scrollToSlide(idx - 1);
+        }
+    };
+
+    const scrollToSlide = (index) => {
+        const slider = sliderRef.current;
+        const slideWidth = slider.offsetWidth; // Get the width of a single slide
+        slider.scrollTo({
+            left: slideWidth * index, // Scroll to the appropriate position
+            behavior: "smooth", // Smooth scrolling
+        });
+    };
 
     const handleClick = () => {
         navigate("/cakes");
@@ -30,15 +40,15 @@ const Landing = () => {
 
     return (
             <div className="landing-container">
-            <div className="slideshow-slider">
-                        {/* <div className="slide-arrows">
-                            <div className='prev-slide'>
-                                &lt;
+            <div className="slideshow-slider" ref={sliderRef}>
+            <div className="slide-arrows">
+                            <div className='prev-slide' onClick={handlePrev}>
+                                <BsChevronLeft />
                             </div>
-                            <div className='next-slide'>
-                                &gt;
+                            <div className='next-slide' onClick={handleNext}>
+                                <BsChevronRight />
                             </div>
-                        </div> */}
+                        </div>
                     {slides.map((slide, index) => (
                         <div className="slide-content" key={index}>
                             <img className="slide-image" src={slide.backgroundImage} alt="image" />

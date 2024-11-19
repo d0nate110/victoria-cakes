@@ -93,38 +93,53 @@
 }
 
 .slide-arrows {
-    background-color: red;
+    position: absolute; 
+    width: 100%; 
+    top: 50%; 
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; 
+}
+
+.slide-content {
+    position: relative;
+    height: 40rem;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    overflow: hidden; 
+}
+
+.prev-slide,
+.next-slide {
+    cursor: pointer;
+    color: rgb(109, 109, 109);
+    font-weight: bold;
+    font-size: 32px;
+    pointer-events: all;
+    padding: 0.5rem; 
+    transition: font-size 0.15s ease, color 0.3s ease;
 }
 
 .prev-slide {
-    cursor: pointer;
-    top: 50%;
-    margin-top: -22px;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    color: white;
-    font-weight: bold;
-    font-size: 36px;
-    transition: 0.3s ease;
+    position: relative;
+    left: 1rem; 
 }
+
 .next-slide {
-    cursor: pointer;
-    top: 50%;
-    border-radius: 70%;
-    margin-top: -22px;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    color: black;
-    font-weight: bold;
+    position: relative;
+    right: 1rem; 
+}
+
+.prev-slide:hover,
+.next-slide:hover {
     font-size: 36px;
-    transition: 0.3s ease;
-}
-.next {
-    right: 0;
-}
-  /* On hover, add a semi-transparent black background */
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    color: #000000;
   }
 
