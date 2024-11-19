@@ -1,0 +1,130 @@
+.landing-container {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.slideshow-slider {
+    display: flex;
+    margin-top: 8rem;
+    width: 100%; /* Full width to ensure snapping works */
+    height: 100%; /* Adjust to the content or specify a height */
+    scroll-snap-type: x mandatory; /* Enable snap-scrolling */
+    overflow-x: auto; /* Horizontal scrollable container */
+    scrollbar-width: none;
+    animation: auto-slide 3s infinite; 
+}
+.slideshow-slider::-webkit-scrollbar {
+
+    display: none; 
+
+}
+
+.slide-content {
+    height: 40rem;
+    flex: 0 0 100%; /* Each slide takes up the full viewport width */
+    scroll-snap-align: start; /* Snap to the center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover; /* Scale image to cover the div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Avoid repeating the image */
+}
+
+.slide-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.slide-image {
+    height: 40rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slide-text {
+    color: rgb(52, 52, 52);
+    position: relative;
+    width: 40rem;
+    height: 30rem;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: -3rem;
+    margin-top: -4rem;
+    line-height: 1.5;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.slide-header {
+    font-size: 42px;
+    color: #373737;
+    z-index: 2;
+}
+
+.slide-button {
+    width: 15rem;
+    height: 3rem;
+    border-radius: 30px;
+    border: 10;
+    border-color: #3c3c3c;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 3;
+}
+
+.slide-button:hover {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.slide-arrows {
+    background-color: red;
+}
+
+.prev-slide {
+    cursor: pointer;
+    top: 50%;
+    margin-top: -22px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    transition: 0.3s ease;
+}
+.next-slide {
+    cursor: pointer;
+    top: 50%;
+    border-radius: 70%;
+    margin-top: -22px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    color: black;
+    font-weight: bold;
+    font-size: 36px;
+    transition: 0.3s ease;
+}
+.next {
+    right: 0;
+}
+  /* On hover, add a semi-transparent black background */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+

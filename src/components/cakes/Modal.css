@@ -1,0 +1,116 @@
+.modal-container {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(47, 45, 45, 0.8);
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.modal-wrapper {
+    width: 70rem;
+    height: 35rem;
+    display: flex;
+    position: relative;
+    z-index: 10;
+    background-color: #f3f1ec;
+    border-radius: 10px;
+}
+.modal-carousel {
+    position: relative;
+    max-width: 100%; /* Use full width of the modal */
+    height: 100%; /* Matches the modal height */
+    display: flex; /* Ensures the image takes the space */
+}
+.carousel-image {
+    width: 30rem;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 9%;
+    padding: 12px;
+    border-radius: 50%;
+    margin-top: -22px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s ease;
+    border: none;
+}
+.next {
+    right: 0;
+}
+  /* On hover, add a semi-transparent black background */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+}
+@keyframes fade {
+    from {
+      opacity: 0.6;
+    }
+    to {
+      opacity: 1;
+    }
+}
+.close-button {
+    position: absolute;
+    color: rgb(104, 104, 104);
+    cursor: pointer;
+    top: 2rem;
+    right: 0;
+    bottom: 40%;
+    margin-right: 2rem;
+    height: 25px;
+    width: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.close-button:hover {
+    color: black;
+}
+.modal-text-container {
+    margin-left: 2rem;
+    max-width: 30rem;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+}
+.modal-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+}
+.modal-price {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(76, 76, 76);
+    font-size: 20px;
+    margin-top: 0.5rem;
+}
+.modal-description {
+    color: rgb(40, 40, 40);
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1rem;
+    max-height: 15rem;
+    font-size: 18px;
+    overflow: auto;
+}

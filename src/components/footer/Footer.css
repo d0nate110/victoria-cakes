@@ -1,0 +1,37 @@
+.footer-container {
+    width: 100%;
+    height: 12rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #3c3c3c;
+}
+.footer-wrapper {
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    bottom: 0;
+}
+.phone-number,
+.location {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin-right: 5rem;
+    color: 5rem;
+}
+.instagram-icon {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+.copyright-container {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copyright-text {
+    color: #fff;
+}
