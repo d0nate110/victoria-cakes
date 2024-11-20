@@ -5,11 +5,19 @@ import slides from "../../constants/landingImages";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const Landing = () => {
-    const delay = 2000; // Slide delay (2 seconds)
     const navigate = useNavigate();
 
     const [idx, setIdx] = useState(0);
     const sliderRef = useRef(null); // Reference to the slider container
+
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+    useEffect(() => {
+        const updateHeight = () => setWindowHeight(window.innerHeight);
+        window.addEventListener("resize", updateHeight);
+
+        return () => window.removeEventListener("resize", updateHeight);
+    }, []);
 
     const handleNext = () => {
         if (idx < slides.length - 1) {
@@ -32,6 +40,8 @@ const Landing = () => {
             left: slideWidth * index, // Scroll to the appropriate position
             behavior: "smooth", // Smooth scrolling
         });
+
+        console.log(slider);
     };
 
     const handleClick = () => {
@@ -50,7 +60,7 @@ const Landing = () => {
                             </div>
                         </div>
                     {slides.map((slide, index) => (
-                        <div className="slide-content" key={index}>
+                        <div className="slide-content" key={index} style={{ height: `${windowHeight}px`}}>
                             <img className="slide-image" src={slide.backgroundImage} alt="image" />
                             <div className="slide-info">
                                 <div className="slide-header">{slide.header}</div>

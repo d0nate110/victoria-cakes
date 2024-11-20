@@ -9,21 +9,19 @@
 .slideshow-slider {
     display: flex;
     margin-top: 8rem;
-    width: 100%; /* Full width to ensure snapping works */
-    height: 100%; /* Adjust to the content or specify a height */
-    scroll-snap-type: x mandatory; /* Enable snap-scrolling */
-    overflow-x: auto; /* Horizontal scrollable container */
+    width: 100%; 
+    scroll-snap-type: x mandatory; 
+    overflow-x: auto;
     scrollbar-width: none;
-    animation: auto-slide 3s infinite; 
+    animation: auto-slide 3s infinite;
 }
+
 .slideshow-slider::-webkit-scrollbar {
-
     display: none; 
-
 }
 
 .slide-content {
-    height: 40rem;
+    height: 50rem;
     flex: 0 0 100%; /* Each slide takes up the full viewport width */
     scroll-snap-align: start; /* Snap to the center */
     display: flex;
@@ -33,6 +31,7 @@
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Avoid repeating the image */
 }
+
 
 .slide-info {
     display: flex;
@@ -44,8 +43,9 @@
     z-index: 2;
 }
 
+
 .slide-image {
-    height: 40rem;
+    height: 100%;
     width: 100%;
     object-fit: cover;
 }
