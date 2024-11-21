@@ -62,11 +62,22 @@ const Landing = () => {
                     {slides.map((slide, index) => (
                         <div className="slide-content" key={index} style={{ height: `${windowHeight}px`}}>
                             <img className="slide-image" src={slide.backgroundImage} alt="image" />
-                            <div className="slide-info">
-                                <div className="slide-header">{slide.header}</div>
-                                <div className="slide-text">{slide.text}</div>
-                                <button className="slide-button" onClick={() => handleClick()}>Check out cakes</button>
-                            </div>
+                                {slide.splash ?
+                                
+                                    (<div className="slide-info">
+                                        <img className="slide-splash" src={slide.splash} alt="splash" />
+                                        <div className="slide-text" style={{ marginTop: '-4rem'}}>{slide.text}</div>
+                                        {/* <button className="slide-button" onClick={() => handleClick()}>Check out cakes</button> */}
+                                        </div>
+                                    ) : (
+                                        <div className="slide-info">
+                                            <div className="slide-header">{slide.header}</div>
+                                            <div className="slide-text">{slide.text}</div>
+                                            <button className="slide-button" onClick={() => handleClick()}>Check out cakes</button>
+                                        </div>
+                                      
+                                    )
+                                }
                         </div>
                         ))}
                 </div>

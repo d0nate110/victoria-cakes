@@ -67,6 +67,11 @@
     text-align: center;
 }
 
+.slide-splash {
+    height: 15rem;
+    margin-top: -5rem;
+}
+
 .slide-header {
     font-size: 42px;
     color: #373737;
@@ -121,14 +126,15 @@
     cursor: pointer;
     color: rgb(109, 109, 109);
     font-weight: bold;
-    font-size: 32px;
+    font-size: 42px;
     pointer-events: all;
     padding: 0.5rem; 
-    transition: font-size 0.15s ease, color 0.3s ease;
+    transition: font-size 0.1s ease, color 0.3s ease;
 }
 
 .prev-slide {
     position: relative;
+    color: white;
     left: 1rem; 
 }
 
@@ -139,7 +145,7 @@
 
 .prev-slide:hover,
 .next-slide:hover {
-    font-size: 36px;
+    font-size: 46px;
     color: #000000;
   }
 
