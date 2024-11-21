@@ -41,18 +41,10 @@
     cursor: pointer;
     position: absolute;
     top: 50%;
-    width: 9%;
-    padding: 12px;
-    border-radius: 50%;
     margin-top: -22px;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    background: rgba(0, 0, 0, 0.3);
     color: white;
-    font-weight: bold;
-    font-size: 16px;
+    font-size: 36px;
     transition: 0.3s ease;
-    border: none;
 }
 .next {
     right: 0;
@@ -60,15 +52,15 @@
   /* On hover, add a semi-transparent black background */
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    color: black;
   }
 .fade {
     animation-name: fade;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 }
 @keyframes fade {
     from {
-      opacity: 0.6;
+      opacity: 0.8;
     }
     to {
       opacity: 1;

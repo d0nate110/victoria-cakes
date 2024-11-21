@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
-import { BsXLg } from "react-icons/bs";
+import { BsXLg, BsChevronLeft, BsChevronRight } from "react-icons/bs";
+
 import "./Modal.css";
 
 const Modal = ({ showModal, setShowModal, cake }) => {
@@ -38,14 +39,10 @@ const Modal = ({ showModal, setShowModal, cake }) => {
                                     </div>
                                 ))}
                                 {/* Previous button */}
-                                <button onClick={prev} className='prev'>
-                                &lt;
-                                </button>
+                                <BsChevronLeft onClick={prev} className='prev'/>
 
                                 {/* Next button */}
-                                <button onClick={next} className='next'>
-                                &gt;
-                                </button>
+                                <BsChevronRight onClick={next} className='next'/>
                             </div>
                             <div className="modal-text-container">
                                 <div className="modal-title">{cake.title}</div>
